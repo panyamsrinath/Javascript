@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <script>
+            function one(){
+                var a = ["apple", "Mango", 500, 200, "banana","papaya"];
+                var b = new Array("apple", "Mango");
+              //  alert(a[0]);
+               // alert(a[4]);
+                //alert(a[a.length-1]);
+                for(i=0;i<a.length;i++)
+            {
+                alert(a[i]);
+            }  
+
+            var j=0;
+            while(j<a.length)
+            {
+                alert(a[j]);
+                j++;
+            }
+    }
+    var a = ["apple", "Mango", 500, 200, "banana","papaya"];
+        function two()
+        {
+                var data="";
+                for( var i=0; i<a.length;i++){
+                    data = data + a[i]+ "<br>";
+                }
+                
+                document.getElementById("myitem").innerHTML = data;
+        }
+        </script>
+    </head>
+    <body>
+        <h2>Array Example</h2>
+        <button onclick="one()">Show Array</button>
+        <button onclick="two()">Print Array</button>
+        <div id="myitem"></div>
+    </body>
+</html>

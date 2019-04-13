@@ -1,0 +1,52 @@
+			<html>
+
+			<head>
+			<script>
+				function copydata()
+				{
+				
+				var chk = document.getElementById("chk1").checked;
+				alert(chk);
+				if(chk==true)
+					{
+					
+					var data = document.getElementById("msg1").value;
+					document.getElementById("msg2").value = data;
+					
+					}else
+					{
+					
+					document.getElementById("msg2").value = "";
+					
+					}
+				
+				
+				
+				}
+
+
+			</script>
+
+
+
+			</head>
+
+			<body>
+				<center>
+				<p><textarea cols="30" rows="5" id="msg1"></textarea></p>
+				<p>
+				<input type="checkbox" id="chk1" onclick="copydata()" >same as above
+				
+				</p>
+				<p>
+				<textarea cols="30" rows="5" id="msg2"></textarea>
+				</p>
+				
+				
+				
+				</center>
+
+
+			</body>
+
+			</html>

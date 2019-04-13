@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   
+  </head>
+  <body onload="check()">
+    <center>
+     <h2>Write a JavaScript program to calculate days left until next November 14(childern's Day).</h2>
+      <p id="today"></p>
+      <p id="fest"></p>
+      <div id="demo"></div>
+    </center>
+    <script>
+        function check(){
+            var today = new Date();
+            var xmasDay = new Date(today.getFullYear(),10,14);
+            if(today.getMonth()==11 && today.getDate()>25){
+              xmasDay.setFullYear(xmasDay.getFullYear()+1);
+            }      
+         var oneDay = 24*60*60*1000;
+            var result = (xmasDay.getTime()-today.getTime())/oneDay;
+            alert(today.getTime());
+            alert(xmasDay.getTime());
+            document.getElementById("today").innerHTML = "Today Date:"+today.getDate()+"/"+(today.getMonth()+1)+"/"+today.getFullYear();
+            document.getElementById("fest").innerHTML = "Xmas Date:"+xmasDay.getDate()+"/"+(xmasDay.getMonth()+1)+"/"+xmasDay.getFullYear();
+            document.getElementById("demo").innerHTML = Math.ceil(result);
+
+           
+        }
+     
+    </script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
+        <style>
+           
+        
+        </style>
+    </head>
+    <body>
+      <div class="container">
+          <div class="row">
+              <h3 class="text-center">Add/Modify Student's data</h3>
+              <div class="col-md-4">
+                  <br><br>
+                  <h4 class="well"> Add Student's Details</h4>
+                  <label for="fname">Name</label>
+                    <input type="text" id="fname" class="form-control" autofocus>
+                    <label for="email">Email</label>
+                    <input type="text" id="email" class="form-control">
+                    <label for="num">Number</label>
+                    <input type="text" id="num" class="form-control form-group">
+                    <button class="btn btn-primary" id="savebtn">Save</button>
+              </div>
+              <div class="col-md-8">
+                  <br><br>
+                  <h4 class="well">Display / Edit student's Details</h4>
+                  <table class="table">
+                      <thead>
+                          <tr>
+                              <th>#</th>
+                              <th>Student Name</th>
+                              <th>Student Email</th>
+                              <th>Student Number</th>
+                              <th>Action</th>
+                          </tr>
+                      </thead>
+                      <tbody id="mydata">
+                          <tr>
+                              <td colspan="5">No Records found!</td>
+                          </tr>
+                      </tbody>
+                  </table>
+                  <button onclick="displayarr()" class="btn btn-block btn-danger btn-lg">Display Array Details in JSON fomat</button>
+                  <div id="jsonData"></div>
+              </div>
+          </div>
+      </div>
+        <script>
+            var arr =[];
+                 
+            $(document).ready(function(){
+                $("#savebtn").click(function(){
+                    var fname =  $("#fname").val();
+                    var email =  $("#email").val();
+                    var num =  $("#num").val();
+                    var newarr = {"name":fname, "email":email,"num":num};
+                   arr = arr.concat(newarr);
+                   $("#fname").val("");
+                   $("#email").val("");
+                   $("#num").val("");
+                   var data = "";
+                   for(var i =0 ;i<arr.length;i++){
+                data+="<tr>";
+                data+="<td>"+(i+1)+"</td>";
+                data+="<td><div id='one"+i+"'>"+arr[i].name+"</div></td>";
+                data+="<td><div id='two"+i+"'>"+arr[i].email+"</div></td>";
+                data+="<td><div id='three"+i+"'>"+arr[i].num+"</div></td>";
+                data+="<td><button class='btn btn-info' onclick='edit("+i+")' id='edit"+i+"'>Edit</button>&nbsp<button class='btn btn-success' onclick='savebtn("+i+")' id='save"+i+"'>save</button></td>";
+               data+="</tr>";
+                   }
+                $("#mydata").html(data);
+                $("#fname").focus();
+                });
+
+                $("#edit+'i'+")
+            });
+
+            
+               
+          
+           
+         
+                
+            
+            function edit(ival){
+                   document.getElementById('edit'+ival).style.display = "none";
+                    document.getElementById('one'+ival).innerHTML = "<input type='text' value='"+arr[ival].name+"' id='input1"+ival+"'>";
+                    document.getElementById('two'+ival).innerHTML = "<input type='text'  value='"+arr[ival].email+"' id='input2"+ival+"'> ";
+                    document.getElementById('three'+ival).innerHTML = "<input type='text'  value='"+arr[ival].num+"' id='input3"+ival+"'> ";
+            }
+            
+            function savebtn(ival){
+                  
+                    document.getElementById('one'+ival).innerHTML = document.getElementById('input1'+ival).value;
+                    document.getElementById('two'+ival).innerHTML = document.getElementById('input2'+ival).value;
+                    document.getElementById('three'+ival).innerHTML = document.getElementById('input3'+ival).value;
+            }
+          
+            function displayarr(){
+              var myJson = JSON.stringify(arr);
+              document.getElementById("jsonData").innerHTML = myJson;
+               
+            }
+        </script>
+ 
+    </body>
+</html>

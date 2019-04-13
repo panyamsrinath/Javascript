@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            ul{
+                list-style: none;
+            }
+            .active{
+                background-color: gold;
+                width:200px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="head1">CLick a list item to replace the text</h1>
+        <button  id="btn">Add Item</button>
+        <ul id="mylist">
+            <li>First Item</li>
+            <li>Second Item</li>
+            <li>Third Item</li>
+            <li>Fourth Item</li>
+            <li>Fifth Item</li>
+        </ul>
+    </body>
+    <script>
+        var newItemCounter = 1;
+        var mylist = document.getElementById("mylist");
+        var btn= document.getElementById("btn");
+       var head1 = document.getElementById("head1");
+        var listitems = document.getElementById("mylist").getElementsByTagName("li");
+
+        for(var i=0;i<listitems.length;i++){
+            listitems[i].addEventListener("click",active);
+        }
+      
+   btn.addEventListener("click",createNewItem);
+
+   function createNewItem(){
+    mylist.innerHTML+= "<li> Data "+ newItemCounter +"</li>";
+       newItemCounter++;
+   }
+
+    function active(){
+     if(){
+        head1.innerHTML = this.innerHTML;
+        for(vari=0;i<listitems.length;i++){
+            listitems[i].classList.remove("active");
+        }
+        this.classList.add("active");
+     }
+    }
+    </script>
+</html>

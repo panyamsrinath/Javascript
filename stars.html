@@ -1,0 +1,68 @@
+<html>
+  <head>
+        
+    <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="dist/fa/css/all.css" />
+    <link rel="stylesheet" href="dist/css/carousel.css" />
+    <link rel="stylesheet" type="text/css" href="set5-68style.css" />
+    <script src="dist/js/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.js"></script>
+  </head>
+  <body>
+      <center>
+                <div class="container">
+          <div class="row">
+              <br>
+              <br>
+              <button class="btn btn-danger btn-sm" id="1" onclick="test(1)"><i class="fa fa-star fa-2x"></i></button>
+              <button class="btn btn-danger btn-sm" id="2" onclick="test(2)"><i class="fa fa-star fa-2x"></i></button>
+              <button class="btn btn-danger btn-sm" id="3" onclick="test(3)"><i class="fa fa-star fa-2x"></i></button>
+              <button class="btn btn-danger btn-sm" id="4" onclick="test(4)"><i class="fa fa-star fa-2x"></i></button>
+              <button class="btn btn-danger btn-sm" id="5" onclick="test(5)"><i class="fa fa-star fa-2x"></i></button>
+              <button class="btn btn-danger btn-sm" id="6" onclick="test(6)"><i class="fa fa-star fa-2x"></i></button>
+              <button class="btn btn-danger btn-sm" id="7" onclick="test(7)"><i class="fa fa-star fa-2x"></i></button>
+          </div>
+      </div>
+      <br>
+      <div id="msg1"></div>
+      <p id="msg2"></p>
+    </center>
+    <script>
+        function test(input){
+            for(var i=1;i<=7;i++){
+                document.getElementById(i).style.background = "red";
+            }
+            for(var i=1;i<=input;i++){
+                document.getElementById(i).style.background = "green";
+            }
+            document.getElementById("msg1").innerHTML = input + " star";
+
+            
+            switch(input){
+                case 1 :
+                document.getElementById("msg2").innerHTML = "Bad";
+                break;
+                case 2 :
+                document.getElementById("msg2").innerHTML = "Good";
+                break;
+                case 3:
+                document.getElementById("msg2").innerHTML = "Very Good";
+                break;
+                case 4 :
+                document.getElementById("msg2").innerHTML = "Best";
+                break;
+                case 5 :
+                document.getElementById("msg2").innerHTML = "Excelllent";
+                break;
+                case 6 :
+                document.getElementById("msg2").innerHTML = "Marvellous";
+                break;
+                case 7 :
+                document.getElementById("msg2").innerHTML = "Perfect";
+                break;
+            }
+        }
+    </script>
+
+  </body>
+  </html>

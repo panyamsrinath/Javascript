@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <script type="text/javascript">
+        		var myjson = '[{"name":"APPLE", "price":"200", "qty":"5"},{"name":"MANGO", "price":"200", "qty":"5"},{"name":"ORANGE", "price":"200", "qty":"5"},{"name":"BANANA", "price":"200", "qty":"5"},{"name":"PINEAPPLE", "price":"200", "qty":"5"}]';
+                function one(){
+                    document.getElementById("demo").innerHTML = myjson;
+                }
+                var jsonarray = JSON.parse(myjson);
+                
+                function two(){
+                    var data ="";
+			for(var i=0;i<jsonarray.length; i++)
+			{
+				data = data + "<tr>";
+				data = data + "<td>" + jsonarray[i].name + "</td>";
+				data = data + "<td>" + jsonarray[i].price + "</td>";
+				data = data + "<td>" + jsonarray[i].qty + "</td>";
+				data = data + "</tr>";
+                
+			}
+            var tableopen = "<table align='center' cellpadding='10' border='1'>";
+			var tableclose = "</table>";
+			var thead = "<tr> <th>Item Name</th> <th>Item Price</th> <th> Item Qty</th></tr>";
+
+			var output = tableopen + thead + data + tableclose;
+			document.getElementById("demo").innerHTML=output;
+                }
+                function saveitem(){
+                    var n = document.getElementById("sname").value;
+			var p = document.getElementById("sprice").value;
+			var q = document.getElementById("sqty").value;
+			var newitem = {"name":n,"price":p,"qty":q};
+			jsonarray = jsonarray.concat(newitem);
+			two();//to reload the list
+                }
+        </script>
+    </head>
+    <body>
+        <center>
+            <h1>JSON=javascript object notation</h1>
+                <div id="demo">
+
+                </div>
+                <br><br>
+                <button onclick="one()">Show json</button>
+                <button onclick="two()">Parse json</button>
+<br><br>
+                <table cellpadding="10" align="center">
+                    <tr>
+                        <th>Item Name </th>
+                        <td><input type="text" id="sname"></td>
+                    </tr>
+                    <tr>
+                            <th>Item Price </th>
+                            <td><input type="text" id="sprice"></td>
+                        </tr>
+                        <tr>
+                                <th>Item Qty </th>
+                                <td><input type="text" id="sqty"></td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                    <button onclick="saveitem()">save</button>
+                                </th>
+                            </tr>
+                </table>
+
+        </center>
+        
+    </body>
+</html>

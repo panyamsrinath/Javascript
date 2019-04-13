@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style></style>
+  </head>
+  <body>
+    <center>
+      <h2>
+        22. Write a JavaScript program to remove a character at the specified
+        position of a given string and return the new string.
+      </h2>
+      <br />
+      <label>Enter Your String: </label>
+      <input type="text" id="str1" autofocus  onkeyup="calLen()"/> <br /><br />
+      <label>Enter remove Character position: </label>
+      <input type="text" id="remove" autofocus /> <br /><br />
+      <button onclick="myFunction()">Check</button>
+      <br /><br />
+      <div id="mydata"></div>
+    </center>
+    <script>  
+     
+        function calLen(){
+            var string1 = document.getElementById("str1").value;    
+            document.getElementById("mydata").innerHTML= "String Length :- &nbsp;" + string1.length;
+        }
+        function myFunction(){
+            var str = document.getElementById("str1").value;    
+            var n = document.getElementById("remove").value;
+         
+           var part1 = str.slice(0, n);
+           var part2 = str.slice(parseInt(n)+1, str.length);
+           console.log(str.length);
+            console.log(part1);
+            console.log(part2);
+           document.getElementById("mydata").innerHTML = part1+part2 ;
+        }
+     
+    </script>
+  </body>
+</html>

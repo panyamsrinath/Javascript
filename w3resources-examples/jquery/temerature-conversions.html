@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <center>
+      <h2>Program to convert temperatures to and from Celsius, Fahrenheit.</h2>
+      <br />
+      <table cellpadding="10">
+        <tr>
+          <th>Celsius</th>
+          <td><input type="number" id="celsius" onkeyup="one()" /></td>
+        </tr>
+        <tr>
+          <th>Fahrenheit</th>
+          <td><input type="number" id="fahrenheit" onkeyup="two()" /></td>
+        </tr>
+        <tr>
+          <th>Kelvin</th>
+          <td><input type="number" id="kelvin" onkeyup="three()" /></td>
+        </tr>
+      </table>
+    </center>
+    <script>
+        function one(){
+            var cel = document.getElementById("celsius").value;
+            var far =  (cel*9)/5+32;
+            document.getElementById("fahrenheit").value = far;
+            var kel = parseInt(cel)+273.15;
+            document.getElementById("kelvin").value = kel;
+        }
+        function two(){
+            var far = document.getElementById("fahrenheit").value;
+            var cel = ((parseInt(far)-32)*5)/9;
+            document.getElementById("celsius").value = cel;
+            var kel = ((parseInt(far)-32)*5)/9+273.15;
+            document.getElementById("kelvin").value = kel;
+        }
+        function three(){
+            var kel = document.getElementById("kelvin").value;
+            var cel = (parseInt(kel)-273.15);
+            document.getElementById("celsius").value = cel;
+            var far = ((parseInt(kel)-273.15)*9)/5+32;
+            document.getElementById("fahrenheit").value = far;
+        }
+    </script>
+  </body>
+</html>

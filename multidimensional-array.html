@@ -1,0 +1,151 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="dist/fa/css/all.css" />
+    <link rel="stylesheet" href="dist/css/carousel.css" />
+    <script src="dist/js/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.js"></script>
+    <style>
+      .vr {
+        border: 2px solid dodgerblue;
+        position: absolute;
+        top: 300px;
+        left: 50%;
+        height: 250px;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+      }
+      .vr-con{
+          transform: rotate(270deg);
+        text-align: center;
+          position: absolute;
+        top: 90px;
+        left:-36px;
+        width: 170px;
+        background-color:dodgerblue;
+        color: white;
+     border-radius:10px; 
+        
+
+      }
+    </style>
+  </head>
+  <body onload="userlist()">
+    <div class="container">
+      <h1 class="text-center"><u>Multidimensional Array Example</u></h1>
+      <br /><br />
+      <div class="row">
+        <div class="col-md-4 well">
+          <div class="row form-group">
+            <br />
+            <label>Name</label>
+            <input type="text" id="fname" class="form-control" />
+          </div>
+          <div class="row form-group">
+            <label>Mobile</label>
+            <input type="text" id="mobile" class="form-control" />
+          </div>
+          <div class="row form-group">
+            <label>Address</label>
+            <textarea class="form-control" id="msg" rows="5"></textarea>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <button class="btn btn-success btn-block" onclick="save()">
+                Save
+              </button>
+            </div>
+            <div class="col-md-6">
+              <button class="btn btn-info btn-block btn-lg" onclick="userlist()">
+               <i class="fa fa-redo fa-spin"></i> Show
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-1">
+          <span class="vr"></span>
+          <span class="vr-con">Fill the form carefully</span>
+        </div>
+        <div class="col-md-7">
+          <caption class="text-center">
+            Total Users (<label id="total">0</label
+            >)
+          </caption>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                  <th>S.No</th>
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>Message</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody id="datalist">
+              <tr>
+                <td colspan="4">No Records!</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script>
+      var user = [
+          {"name":"sreenath","mobile":"9491845841", "msg":"text"}
+      ];
+      
+      function save(){
+          var name = document.getElementById("fname").value;
+          var mobile = document.getElementById("mobile").value;
+          var message = document.getElementById("msg").value;
+          if(name==""|| mobile==""|| message==""){
+              var msg2 = "Invalid Input !";
+            document.getElementById("total").innerHTML = msg2;
+          }
+          else{
+
+         
+          var newarray = {"name":name,"mobile":mobile, "msg":message};
+              user =user.concat(newarray); //array to concat
+          userlist();
+          clearinput();
+        }
+      }
+      function clearinput(){
+          document.getElementById("fname").value ="";
+          document.getElementById("mobile").value =""
+          document.getElementById("msg").value ="";
+      }
+      function userlist(){
+        document.getElementById("total").innerHTML = user.length;
+              var data = "";
+              for( var i=0;i<user.length;i++){
+
+                n=i+1;
+              data = data+"<tr>";
+             data = data+"<td>"+n +"</td>";
+              data = data+"<td>"+user[i].name+"</td>";
+              data = data+"<td>"+user[i].mobile+"</td>";
+             data = data+"<td>"+user[i].msg+"</td>";
+             data = data+"<td><button class='btn btn-danger' onclick='deluser("+i+")'>Delete</button></td>";
+            data = data+"</tr>";
+            }
+            
+           document.getElementById("datalist").innerHTML = data;
+      }
+     
+     function deluser(index){
+            var sts = confirm("Are you sure?");
+            if(sts==true){
+                user.splice(index,1); // to delete the record of given index;
+                userlist();
+            }
+           
+     }
+     
+
+    </script>
+  </body>
+</html>

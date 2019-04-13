@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <center>
+       <marquee> <h3>Check that given year is lepa year or not</h3></marquee>
+       <label>Enter a year :</label>
+        <input type="text" id="leap" >
+        <div id="demo" ></div>
+        <br>
+        <button onclick="check()">Check Leap Year or not</button>
+    </center>
+        <script>
+            function check(){
+                var year = document.getElementById("leap").value;
+                if((year%4 === 0) && (year%100!=0) ||(year%400==0)){
+                    document.getElementById("demo").innerHTML = "Given" +  year + "is leap year";
+            }
+            else{
+                document.getElementById("demo").innerHTML = "Given" +  year + "is not leap year";   
+            }
+            }
+       
+        
+        </script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script>
+            function one(){
+                var a = 50;
+                var b = 100;
+                if(a>b){
+                    alert("The Higher Number is "+ a);
+                }
+                else{
+                    alert("The Higher Number is "+ b);
+                }
+            }
+
+            function two(){
+                var a=100;
+
+                var b = prompt("Enter value of b");
+                var c = prompt("Enter value of c");
+                b = parseInt(b);
+                c = parseInt(c);
+
+                if (( a>b)&&(a>c)){
+                    alert("Higher Number is :" + a);
+                }
+                else if((b>a) && (b>c)){
+                    alert("Higher Number is :" + b);
+                }
+                else{
+                    alert("Higher Number is :" + c);
+                }
+            }
+            
+        </script>
+    </head>
+    <body>
+        <center>
+            <h3>Javascript conditions Example</h3>
+            <button onclick="one()">If Else</button>
+            <button onclick="two()">If Else if</button>
+            <button onclick="three()">Nested</button>
+            <button onclick="four()">Switch</button>
+        </center>
+    </body>
+</html>

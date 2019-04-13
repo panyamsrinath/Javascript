@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+     
+    </style>
+  </head>
+  <body onload="check()">
+    <center>
+     <h2>Write a JavaScript program to calculate days left until next November 14(childern's Day).</h2>
+      <p id="today"></p>
+      <p id="jan"></p>
+    </center>
+    <script>
+        function check(){
+            var today = new Date(2019,11,14);
+            var totime = today.getTime();
+        
+           var toyear = today.getFullYear();
+           var tomonth = today.getMonth();
+            var todate = today.getDate();
+          var nmonth = 10;
+          var nday = 14;
+          
+            var nyear = toyear;
+            if(tomonth<=nmonth){
+                newDate = new Date(nyear,10,14);
+                var ntime = newDate.getTime();
+              var oneDay = 24*60*60*1000; 
+              var diff = ntime-totime;
+              var numDays = diff/oneDay;
+              alert(numDays);
+            }
+            else{
+              newDate = new Date(nyear+1,10,14);
+              var ntime = newDate.getTime();
+              var oneDay = 24*60*60*1000; 
+              var diff = totime-ntime;
+              var numDays = diff/oneDay;
+              alert(numDays);
+            
+            }
+
+           
+        }
+     
+    </script>
+  </body>
+</html>

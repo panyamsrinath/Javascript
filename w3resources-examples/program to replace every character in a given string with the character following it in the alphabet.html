@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      span {
+        font-weight: 900;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h2>
+        JavaScript program to compute the sum of the two given integers. If the
+        two values are same, then returns triple their sum
+      </h2>
+      <br />
+      <label>Input-1:</label><input type="text" id="num1" autofocus />
+      This is coded string <div id="mydata"></div>
+      <br /><br />
+      <span>+</span> <br /><br />
+      <label>Input-2:</label> <input type="number" id="num2" /> <br /><br />
+      <span>=</span> <br /><br />
+
+      <label>Output</label> <input type="number" id="result" />
+      <button onclick="myFunction()">check</button>
+      <div id="mydata1"></div>
+    </center>
+    <script>
+      function myFunction() {
+        var str = document.getElementById("num1").value;
+        for (var i = 0; i < str.length; i++) {
+          var char = str.charCodeAt(i);
+           var newelem ="";
+          if((char>=97 && char<=122) ||(char>=65 && char<=90)){
+          if(char==122){
+            newelem = String.fromCharCode(97);
+            document.getElementById("mydata").innerHTML += newelem;
+          }
+          else if(char==90){
+            newelem = String.fromCharCode(65);
+            document.getElementById("mydata").innerHTML += newelem;
+          }
+          else{
+            newelem = String.fromCharCode(parseInt(char)+1);
+          document.getElementById("mydata").innerHTML += newelem;
+          }
+        }
+        else{
+          newelem = String.fromCharCode(parseInt(char));
+          document.getElementById("mydata").innerHTML += newelem;
+        }
+        var out = document.getElementById("num1").value;
+
+        }
+      }
+    </script>
+  </body>
+</html>

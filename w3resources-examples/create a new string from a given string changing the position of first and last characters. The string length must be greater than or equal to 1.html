@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style></style>
+  </head>
+  <body>
+    <center>
+      <h2>
+        23. Write a JavaScript program to create a new string from a given
+        string changing the position of first and last characters. The string
+        length must be greater than or equal to 1.
+      </h2>
+      <br />
+      <label>Enter Your String: </label>
+      <input type="text" id="str1" autofocus  /> <br /><br />
+    
+      <button onclick="myFunction()">Check</button>
+      <br /><br />
+      <div id="mydata"></div>
+    </center>
+    <script>
+  
+      function myFunction() {
+        var str = document.getElementById("str1").value;
+        if(str.length<=1){
+            document.getElementById("mydata").innerHTML = str;
+        }
+        else{
+            var part1 = str[0];
+      var part2 = str[str.length-1];
+      var part3 = str.slice(1,str.length-1);
+      console.log(part3);
+           document.getElementById("mydata").innerHTML = part2.concat(part3,part1);
+        }
+      
+      }
+    </script>
+  </body>
+</html>

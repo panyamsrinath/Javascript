@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <body>
+       <marquee> <h3>Print the current Date</h3></marquee>
+        
+        <div id="demo"></div>
+   
+        <script>
+        var str =  "w3Resources";
+        setInterval(function(){
+            str =str.charAt(str.length-1)+str.substring(0,str.length-1);
+            document.getElementById("demo").innerHTML = str;
+        },100)  
+        
+        </script>
+    </body>
+</html>

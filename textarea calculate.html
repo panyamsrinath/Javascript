@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script>
+            function calculate(){
+                var data = document.getElementById("text").value;
+                var result = 100-data.length;
+                document.getElementById("ouput").innerHTML = result;
+            }
+        </script>
+    </head>
+    <body>
+        <center>
+            <br>
+            <textarea id="text" placeholder="Enter your Address max 100 charcacters" cols="50" rows="5" maxlength="" onkeyup="calculate()"></textarea>
+            <p> <label id="ouput">100</label> is left out of 100 characters</p>
+        </center>
+    </body>
+</html>

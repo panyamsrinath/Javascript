@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="dist/css/bootstrap.css" />
+    <script>
+        function red(){
+            document.getElementById("block1").style.backgroundColor = "red";
+            document.getElementById("block1").style.color = "white";
+        }
+        function green(){
+            document.getElementById("block1").style.backgroundColor = "green";
+            document.getElementById("block1").style.color = "white";
+        }
+    </script>
+  </head>
+  <body>
+      <div class="container">
+          <br>
+          <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6">
+                  <button class="btn btn-danger btn-md" onclick="red()">Red</button>
+                  <button class="btn btn-success btn-md" onclick="green()">Green</button>
+                  <br><br>
+                  <div id="block1" class="well text-center">
+                      <h3>Hello Block</h3>
+                  </div>
+            </div>
+
+              </div>
+              <div class="col-md-3"></div>
+          </div>
+      </div>
+  </body>
+</html>

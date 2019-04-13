@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="dist/css/bootstrap.css">
+        <script>
+             var item = ["Apple", "Banana","Orange","seek"];
+            function show(){
+               var data = "";
+               for (var i=0; i < item.length; i++)
+               {
+                   data = data+"<tr>";
+                    data = data+"<td>"+i+"</td>";
+                    data = data+"<td>"+item[i]+"</td>";
+                    data = data+"<td><button onclick='delitem("+i+")'>Delete</button></td>";
+                   data = data+"</tr>";
+               }
+              
+               document.getElementById("mydata").innerHTML = data;
+            
+            }
+
+            function save()
+            {
+                var newItem = document.getElementById("name").value;
+                item.push(newItem);
+                show();  // to reload the list
+                document.getElementById("name").value = ""; // to clear the text box;
+            
+            }
+            function one(){
+                item.shift();  // todelete first element
+                show();  // to reload the list
+            }
+            function two(){
+                item.pop();  // todelete first element
+                show();  // to reload the list
+            }
+
+            function delitem(index){
+                item.splice(index,1);
+                show();  //to reload the list
+            }
+        </script>
+    </head>
+    <body>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h3>Single Dimensional Array Example</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>New Item</label>
+                        <input type="text" id="name" class="form-control input-sm" >
+                    </div>
+                    <div class="form-group text-center">
+                        <button class="btn btn-primary btn-sm " onclick="save()">Save</button>
+                        <button class="btn btn-success btn-sm" onclick="show()">Show Item</button>
+                        <hr>
+                        <button class="btn btn-danger btn-sm" onclick="one()">Del 1</button>
+                        <button class="btn btn-danger btn-sm" onclick="two()">Del 2</button>
+
+                    </div>
+                </div><!--4 end-->
+                <div class="col-sm-8">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Item ID</th>
+                                <th>Item Name</th>
+                                <th>Delete</th>
+                            </tr>
+                            <tbody id="mydata">
+                                <tr > 
+                                    <td colspan="3">No Records</td>
+                                </tr>
+                            </tbody>
+                    </table>
+                </div><!--8 end-->
+            </div>
+        </div>
+    </body>
+</html>

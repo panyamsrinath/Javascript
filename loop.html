@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <style>
+        
+        </style>
+        <script>
+            function one(){
+                    for(var i = 0; i<=5;i++)
+                    {
+                        alert(i);
+                    }
+            }
+            function two(){
+                    for(var i=5; i>=1;i--){
+                        alert(i);
+                    }
+            }
+            function three(){
+                var i=10;
+                    while(i<=5){
+                        alert(i);
+                        i++;
+                    }
+                    
+            }
+            function four(){
+                var i=5;
+                while(i>=1){
+                    alert(i);
+                    i--;
+                }
+            }
+            function five(){
+                var i =10;
+                do{
+                    alert(i);
+                    i++;
+                }
+                while(i<=5);
+            }
+            function six(){
+                var i =1;
+                var data="";
+               while(i<=20){
+                   for (var j= 1; j<=i;j++){
+                       if(i%2==0){
+                            data = data+"<b >"+i+"</b>";
+                       }
+                       else{
+                        data = data+"<i>"+i+"</i>";
+                       }
+                            data = data+i;
+                   }
+                   
+                   
+                   i++;
+                   data = data+ "<br/>";
+               }
+          document.getElementById("mydata").innerHTML = data;
+            }
+            function seven(){
+                var i=20;
+                var data="";
+                while(i>=1){
+                    for(var j=1; j<=i;j++){
+                        if(i%2==0){
+                            data = data+"<b >"+i+"</b>";
+                       }
+                       else{
+                        data = data+"<i>"+i+"</i>";
+                       }
+                            data = data+i;
+                   }
+                   i--;
+                data = data+ "<br/>";
+                }
+                document.getElementById("mydata1").innerHTML = data;
+            }
+        </script>
+    </head>
+    <body onload="test()">
+            <center>
+                <h2>Javascript Loop Examples</h2>
+                <button onclick="one()">For Loop Ascending</button>
+                <button onclick="two()">For Loop Descending</button>
+                <button onclick="three()">While Loop Ascending</button>
+                <button onclick="four()">While Loop Descending</button>
+                <button onclick="five()">Do While  Ascending</button>
+                <button onclick="six()">while and for loop</button>
+                <div algin="center" id="mydata">
+                    No Data
+                </div>
+                <button onclick="seven()">while & for loop 20 to 1</button>
+                <div algin="center" id="mydata1">
+                    DAta to disply form 20 to 1
+                </div>
+            </center>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script>
+            function fun(){
+                var data = document.getElementById("msg1").value;
+                document.getElementById("msg2").innerHTML = data;
+        }
+        
+        </script>
+    </head>
+    <body onload="fun()">
+        <center>
+            <textarea rows="5" cols="55" id="msg1"></textarea>
+            <br>
+            <input type="checkbox"  onclick="fun()">Same address above
+            <br>
+            <br>
+            <textarea  id="msg2" cols="55" rows="5"></textarea>
+        </center>
+    </body>
+</html>

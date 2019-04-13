@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h3>Print the current Date</h3>
+        
+        <div id="demo"></div>
+   
+        <script>
+            var today = new Date();
+            var year = today.getFullYear();
+            var month = today.getMonth();
+            var date =  today.getDate();
+            /*
+            if(month<10){
+                month = "0"+month;
+            }
+             */
+            if(date<10){
+                date = "0"+date;
+            }
+           
+           var monthlist = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+            var result = document.getElementById("demo");
+           result.innerHTML = "Today date is : "+ date + "/" + monthlist[month] + "/"+ year;
+        </script>
+    </body>
+</html>

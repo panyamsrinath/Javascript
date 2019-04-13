@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="dist/css/bootstrap.css" />
+  </head>
+  <style>
+   
+    .well1{
+      background-color: #333;
+      
+    }
+    h4{
+      color: white;
+      
+    }
+  </style>
+  <body onload="thisday()">
+    <div class="container">
+      <div class="row">
+        <h1 class="text-center">Calculate your age</h1>
+        <br /><br />
+        <div class="col-md-4"></div>
+        <div class="col-md-4 well well1">
+            <h4>Today Date Details</h4>
+          <div class="row form-group well">
+            
+              <div class="col-md-4">
+                  <label>Year</label>
+                  <input type="text" class="form-control" id="cyear"/>
+              </div>
+              <div class="col-md-4">
+                  <label>Month</label>
+                  <input type="text" class="form-control"  id="cmonth" />
+              </div>
+              <div class="col-md-4">
+                  <label>Day</label>
+                  <input type="text" class="form-control"  id="cday"/>
+              </div>
+          </div>
+          <h4>your Birth Details</h4>
+          <div class="row form-group well">
+              
+              <div class="col-md-4">
+                  <label>Year</label>
+                  <input type="text" class="form-control"  id="byear" autofocus />
+              </div>
+              <div class="col-md-4">
+                  <label>Month</label>
+                  <input type="text" class="form-control"  id="bmonth" />
+              </div>
+              <div class="col-md-4">
+                  <label>Day</label>
+                  <input type="text" class="form-control"  id="bday" />
+              </div>
+            
+          </div>
+          <h4>your Age</h4>
+          <div class="row form-group well">
+            <div class="col-md-4">
+              <br>
+              <button class="btn btn-primary btn-block" onclick="calculate()">Age</button>
+            </div>
+            <div class="col-md-8">
+              <div class="row form-group" >
+                <div class="col-md-4">
+                    <label>Year</label>
+                    <input type="text" class="form-control" id="ayear" />
+                </div>
+                <div class="col-md-4">
+                    <label>Month</label>
+                    <input type="text" class="form-control" id="amonth"/>
+                </div>
+                <div class="col-md-4">
+                    <label>Day</label>
+                    <input type="text" class="form-control" id="aday"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+      
+           
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function getdata(){
+        var another =new Date(document.getElementById("give").value);
+        alert(another);
+      }
+
+    var today = new Date();
+  
+   function thisday(){ 
+      document.getElementById("cyear").value = today.getFullYear();
+      document.getElementById("cmonth").value = today.getMonth()+1;
+      document.getElementById("cday").value = today.getDate();
+    }
+   
+    function calculate(){
+      var y =  document.getElementById("byear").value;
+      var m =  document.getElementById("bmonth").value;
+      var d =  document.getElementById("bday").value;
+      var birthday = new Date(y, m, d);
+      
+      var ayear = today.getFullYear()-birthday.getFullYear() - 1;
+      document.getElementById("ayear").value = ayear;
+
+      if(birthday.getMonth()>=today.getMonth()){
+        var amonth = today.getMonth()-birthday.getMonth()+12;
+        document.getElementById("amonth").value = amonth;
+      }
+      else{
+        var amonth = today.getMonth()-birthday.getMonth();
+        document.getElementById("amonth").value = amonth;
+      }
+      
+      if(birthday.getDate()>=today.getDate()){
+        var adate = today.getDate()-birthday.getDate()+31;
+        document.getElementById("aday").value = adate;
+      }
+      else{
+        var adate = today.getDate()-birthday.getDate();
+        document.getElementById("aday").value = adate;
+      }
+      
+     
+  
+    }
+  
+    </script>
+  </body>
+</html>

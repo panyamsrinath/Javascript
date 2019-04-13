@@ -1,0 +1,56 @@
+<html>
+  <head> 
+     
+      <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            float: left;
+            background-color: red;
+            margin: 0 50px;
+            border-radius: 50%;
+        }
+     
+        </style>
+  </head>
+  <body>
+    <div class="box" id="1"></div>
+    <div class="box" id="2"></div>
+    <div class="box" id="3"></div>
+    <div class="box" id="4"></div>
+    <div class="box" id="5"></div>
+    <div class="box" id="6"></div>
+    <div style="clear:both;"></div>
+<br><br>
+<center>
+        <button onclick="test('red')">Red</button>
+        <button onclick="test('green')">Green</button>
+        <button onclick="test('blue')">Blue</button>
+        <button onclick="test1()">Yellow</button>
+    </center>
+
+    <script>
+            function test(color)
+            {
+           
+                for(var i=1;i<=6;i++)
+                {
+                    document.getElementById(i).style.background = color;
+                }
+            }
+            function test1(){
+                var color = "yellow";
+               
+                {
+                    document.getElementById(1).style.background = "yellow";
+                    document.getElementById(2).style.background = color;
+                    document.getElementById(3).style.background = color;
+                    document.getElementById(4).style.background = color;
+                    document.getElementById(5).style.background = color;
+                    document.getElementById(6).style.background = color;
+
+                }
+            }
+        </script>
+  </body>
+</html>

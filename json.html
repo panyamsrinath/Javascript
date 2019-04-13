@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <style>
+        
+        </style>
+    </head>
+    <body>
+        <h2 align="center">JSON- Javascript Object Notation</h2>
+        <p align="center">
+            JSON work like as container, hold the data in encoded form.
+            as:
+            database-> array -> php-JSON ->send to Javascript -> HTML
+        </p>
+        <center>
+            <button onclick="show()">Show JSON</button>
+            <button onclick="parse()">Parse JSON</button>
+            <br><br>
+            <div id="mydata">
+
+            </div>
+        </center>
+        <script>
+            var myJson = '["Apple","Banana","carrot","Mango","Orange"]';
+            function show(){
+              document.getElementById("mydata").innerHTML = "This is JSON <br> "+myJson;
+            }
+            function parse(){
+                var itemarray = JSON.parse(myJson);  //JSON to array
+                var data = "<h5>Item List</h5>";
+                for(var i=0;i<itemarray.length;i++){
+                    data = data+"<p> " +itemarray[i]+"</p>";
+                }
+                document.getElementById("mydata").innerHTML = data;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #demo {
+        background-color: dodgerblue;
+        color: #ffffff;
+        font-size: 30px;
+        font-weight: bold;
+        width: fit-content;
+      }
+      #demo1 {
+        background-color: rgb(153, 218, 33);
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        width: fit-content;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h3>
+        Write a JavaScript program where the program takes a random integer
+        between 1 to 10, the user is then prompted to input a guess number. If
+        the user input matches with guess number, the program will display a
+        message "Good Work" otherwise display a message "Not matched".
+      </h3>
+      <br /><br />
+      Enter your Guess Number : <input type="number" id="num" />
+      <button onclick="luck()">Check my luck!</button><br />
+      <small><b>Note: Please Enter any value between 1 and 10 only</b></small>
+      <br /><br />
+      <div id="demo1"></div>
+      <div id="demo"></div>
+    <br>
+    <h2 id="result"></h2>
+    </center>
+    <script>
+      function luck() {
+        var input = document.getElementById("num").value;
+        document.getElementById("demo1").innerHTML =
+          "Your Guess Number is : " + input;
+          document.getElementById("num").value ="";
+        var ran = Math.random() * 10;
+        ran = Math.ceil(ran);
+        document.getElementById("demo").innerHTML = "System Number is : " + ran;
+        if (input == ran) {
+          document.getElementById("result").innerHTML = "Good Work";
+        }
+        else{
+            document.getElementById("result").innerHTML = "Not Matched";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style></style>
+  </head>
+  <body>
+    <center>
+      <h2>
+        21. Write a JavaScript program to create a new string adding "Py" in
+        front of a given string. If the given string begins with "Py" then
+        return the original string
+      </h2>
+      <br />
+      <label>Enter Three numbers</label><br><br>
+      <input type="text" id="num1" autofocus /><br><br>
+      <input type="text" id="num2"  />
+      <br><br>
+      <input type="text" id="num3"  />
+    
+     <br><br>
+      <button onclick="myFunction()">Degree</button>
+      <br /><br />
+      <div id="mydata"></div>
+      <div id="mydata1"></div>
+   
+    
+ 
+    <script>
+
+ function myFunction(){
+var arr =[12,23,34,21];
+var big= "";
+for(var i=0;i<arr.length;i++){
+var big = arr[i];
+arr[i] = arr[i+1];
+arr[i+1]=big;
+}
+document.getElementById("myadata").innerHTML = arr;
+}
+
+
+
+    </script>
+  </body>
+</html>

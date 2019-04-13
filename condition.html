@@ -1,0 +1,89 @@
+		<html>
+		<head>
+		<script>
+			function one()
+			{
+			var a = 100;
+			var b = 200;
+			if(a>b)
+			{
+			
+			alert("The Higher Number is : "+a);
+			
+			} else{
+			
+			alert("The Higher Number is : "+b);
+			
+			}
+			
+			}
+		function two()
+		{
+		 var a = 100;
+		 var b =prompt("Enter Any Number");
+		 var c =prompt("Enter Another Number");
+		 b = parseInt(b);
+		 c = parseInt(c);
+		if( (a>b) && (a>c) )
+		{
+ 			alert("Higher Number is :"+a);
+		
+		}
+		else if( (b>a) && (b>c))
+		{
+		
+		alert("Higher Number is :"+b);
+		
+		}
+		
+		
+		
+		else{
+		
+		alert("Higher Number is :"+c);
+		}
+		}
+		
+		function three()
+		{
+		var input = prompt("Enter any number");
+		if ( isNaN(input))
+		
+		{
+			alert(input +" : is string data type");
+			
+		} else{
+			input = parseInt (input)
+			if (input %2==0)
+			{
+			
+			alert(input +" : is even number");
+			
+			}else{
+			alert(input +":is odd number");
+			
+			}
+		
+		}
+		
+		
+		}
+		
+		
+		</script>
+
+
+		</head>
+
+		<body>
+		<center>	<h3> Javascript control structure condition example</h3>
+			<button onclick="one()">If Else</button>
+			<button onclick="two()">If Else If </button>
+			<button onclick="three()">Nested</button>
+			<button onclick="four()">Switch Case</button>
+		
+		</center>
+		</body>
+
+
+		</html>

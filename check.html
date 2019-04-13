@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <br /><br /><br />
+          <button class="btn btn-lg " onclick="demo()">Click</button>
+          <div id="demo"></div>
+          <div id="demo1"></div>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+    <script>
+      var arr = "SREEnath";
+      var newstr = "";
+      var status = "";
+      function demo() {
+        for (var i = 0; i < arr.length; i++) {
+          if ("a" <= arr[i] && arr[i] <= "z") {
+            newstr[i]= arr[i].toUpperCase();
+            console.log(newstr[i]);
+          } else {
+            status = "False";
+            newstr[i]= arr[i].toLocaleLowerCase();
+            console.log(arr[i]);
+          }
+          document.getElementById("demo").innerHTML = newstr;
+        }
+      }
+    </script>
+  </body>
+</html>

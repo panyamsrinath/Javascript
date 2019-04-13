@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <center>
+      <h2>
+        Program to calculate multiplication and division of two numbers (input
+        from user).
+      </h2>
+      <br />
+      <label>1<sup>st</sup>Number: </label>
+      <input type="text" id="num1" /><br /><br />
+      <label>2<sup>nd</sup>Number: </label>
+      <input type="text" id="num2" /><br /><br />
+      <button onclick="mul()">Multiply</button>
+      <button onclick="div()">Divison</button>
+      <div id="myResult"></div>
+    </center>
+    <script>
+      function mul() {
+        var x = document.getElementById("num1").value;
+        var y = document.getElementById("num2").value;
+        document.getElementById("myResult").innerHTML = x*y;
+      }
+      function div() {
+        var x = document.getElementById("num1").value;
+        var y = document.getElementById("num2").value;
+        document.getElementById("myResult").innerHTML = x/y;
+      }
+    </script>
+  </body>
+</html>

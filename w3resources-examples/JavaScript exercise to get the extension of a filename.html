@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <center>
+           <h2>JavaScript exercise to get the extension of a filename</h2>
+      <br/>
+ 
+  
+        <button onclick="myFunction()">Get Link</button>
+        <br><br>
+        <div id="demo1"></div>
+        <br>
+        <div id="demo2"></div>
+        <br>
+        <div id="demo3"></div>
+    </center>
+    <script>
+        var filename = "";
+        function myFunction(){
+          filename = "index.html";
+          document.getElementById("demo1").innerHTML+= "File Name is <b>"+filename +"</b>  and extension is <b>"+filename.split('.').pop()+"<b><br>";
+          filename = "about.js";
+          document.getElementById("demo1").innerHTML+= "File Name is <b>"+filename +"</b>  and extension is <b>"+filename.split('.').pop()+"<b><br>";
+          filename = "home.php";
+          document.getElementById("demo1").innerHTML+= "File Name is <b>"+filename +"</b>  and extension is <b>"+filename.split('.').pop()+"<b><br>";
+        }
+     
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    
+    </style>
+  </head>
+  <body>
+      <center>
+        <br>
+        <br><br>
+        <h2>Javascript Examples</h2>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+      </center>
+      <Script>
+        var today = new Date();
+        var day =  today.getDay();
+        var hour = today.getHours();
+        var minute = today.getMinutes();
+        var second = today.getSeconds();
+        var prepand = (hour>=12)? "PM" : "AM";
+        var daylist = ["sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        hour = (hour>=12)? hour-12: hour;
+        if( hour ==0 && prepand=="PM" ){
+          if(minute===0 && second ===0){
+            hour =12;
+            prepand ="NOON";
+          }
+          else{
+            hour = 12;
+            prepand = "PM";
+          }
+        }
+        if( hour ==0 && prepand=="AM" ){
+          if(minute===0 && second ===0){
+            hour =12;
+            prepand ="MIDNIGTH";
+          }
+          else{
+            hour = 12;
+            prepand = "AM";
+          }
+        }
+        
+        document.getElementById("demo1").innerHTML = "Today is :"+ daylist[day];
+        document.getElementById("demo2").innerHTML = "Current Time is : " + hour+" "+ prepand +" : "+minute+" : "+ second ;
+
+      </Script>
+  </body>
+</html>

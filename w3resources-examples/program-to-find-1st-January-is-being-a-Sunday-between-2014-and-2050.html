@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <center>
+    <h3> Find 1st January be a Sunday between a range of years(from 2014 to 2050)</h3>
+    
+       <div id="demo"></div>
+        <button onclick="check()">Button</button>
+    </center>
+        <script>
+            function check(){
+               var fyear = 2014;
+                var lyear = 2050;
+                for(var i = fyear ; i<=lyear;i++){
+                  var currentdate =   new Date(i,00,01);
+                 // var dayslist = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
+                  var cday = currentdate.getDay();
+                  if(cday==0 ){
+                      document.getElementById("demo").innerHTML+= i+"<br>";
+                  } 
+                  else{
+                    document.getElementById("demo").innerHTML+= "";
+                  }
+
+                }
+            }
+       
+        
+        </script>
+    </body>
+</html>

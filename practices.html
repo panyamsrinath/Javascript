@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <style>
+
+    </style>
+
+        <script>
+         
+         var item = ["Apple","Banana","Carrot","Pineapple"];
+         function show(){
+             var data = "";
+             for(i=0;i<item.length;i++){
+                 data = data+"<tr>";
+                 data = data+"<td>"+i+"</td>";
+                 data = data+"<td>"+item[i]+"</td>";
+                 data = data+"<td><button class='btn btn-danger' onclick='del("+i+")'>Delete</button></td>";
+                 data = data+"</tr>"
+             }
+             document.getElementById("mydata").innerHTML = data;
+         }
+         function save(){
+             var newItem = document.getElementById("msg1").value ;
+             item.push(newItem);
+             show();
+             document.getElementById("msg1").value = "";
+         }
+function one(){
+    item.shift();
+    show();
+}
+
+function two(){
+    item.pop();
+    show();
+}
+
+function del(index){
+    item.splice(index,1);
+    show();
+}
+        </script>
+
+    </head>
+    <body>  
+        <div class="container">
+            <div class="row text-center">
+                <h3>Single Dimensional Array</h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="row form-group">
+                        <label>Enter Your Input</label>
+                        <input type="text" id="msg1" class="form-control">
+                    </div>
+                    <div class="row form-group">
+                        <button class="btn btn-primary" onclick="save()">Save</button>
+                        <button class="btn btn-success" onclick="show()">Show list</button>
+                        <hr>
+                        <button class="btn btn-danger" onclick="one()">Del 1</button>
+                        <button class="btn btn-danger" onclick="two()">Del 2</button>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Item Id</th>
+                                <th>Item Name</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mydata">
+                            <tr>
+                                <td colspan="3">No records found</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+   
+ 
+    </body>
+</html>

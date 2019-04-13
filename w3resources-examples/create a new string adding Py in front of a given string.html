@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style></style>
+  </head>
+  <body>
+    <center>
+      <h2>
+        21. Write a JavaScript program to create a new string adding "Py" in
+        front of a given string. If the given string begins with "Py" then
+        return the original string
+      </h2>
+      <br />
+      <label>Enter Your String: </label> <input type="text" id="str1" autofocus  />
+      <br /><br />
+    <button onclick="myFunction()">Check</button>
+      <br /><br />
+      <div id="mydata"></div>
+    </center>
+    <script>
+      function myFunction() {
+        var string1 = document.getElementById("str1").value;
+        var newStr = string1.slice(0,2);
+        if((newStr == "Py") || (newStr == "py")){
+            document.getElementById("mydata").innerHTML = string1;
+        }
+        else{
+            document.getElementById("mydata").innerHTML = "Py"+string1;
+        }
+            }
+    </script>
+  </body>
+</html>

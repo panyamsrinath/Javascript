@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="dist/css/bootstrap.css">
+        <style>
+        label{
+            color: rgb(139, 39, 0);
+        }
+        </style>
+    </head>
+
+    <body>
+        <div class="contianer">
+            <div class="row form-group">
+                
+                <div class="col-md-3"></div>
+                <div class="col-md-6 well">
+                    <h2 class="text-center text-uppercase"><u>Form validation</u></h2>
+                    <br><br>
+                    <div class="row form-group">
+                        <div class="col-md-2">
+                                <label for="name">Name</label>
+                        </div>
+                     <div class="col-md-10">
+                            <input type="text" id="fname" class="form-control">
+                            <i id="nameerror" class="text-danger"></i>
+                     </div>
+                </div>
+                <div class="row form-group">
+                        <div class="col-md-2">
+                                <label for="mobile">Mobile</label>
+                        </div>
+                     <div class="col-md-10">
+                            <input type="text"id="mobile" class="form-control" maxlength="10">
+                            <i id="mobileerror" class="text-danger"></i>
+                     </div>
+                </div>
+                <div class="row form-group">
+                        <div class="col-md-2">
+                                <label for="name">Message</label>
+                        </div>
+                     <div class="col-md-10">
+                            <textarea class="form-control" id="msg" rows="5" maxlength="200"></textarea>
+                            <i id="msgerror" class="text-danger"></i>
+                     </div>
+                </div>
+                <div class="row form-group">
+                        <div class="col-md-2">
+                                <label for="name">City</label>
+                        </div>
+                     <div class="col-md-10">
+                            <select id="city" class="form-control">
+                                <option value="">Choose</option>
+                                <option value="1">Banglore</option>
+                                <option value="2">Mumbai</option>
+                                <option value="3">Pune</option>
+                                <option value="4">Hyderabad</option>
+                            </select>
+                            <i id="cityerror" class="text-danger"></i>
+                     </div>
+                     <br><br>
+                     <div class="row form-group">
+                            <div class="col-md-2">
+                                    <label for="name">Gender</label>
+                            </div>
+                         <div class="col-md-10">
+                                <input type="radio" id="male"  name="gender"> Male
+                                <input type="radio" id="female"  name="gender"> Female
+                             
+                               <br> <i id="gendererror" class="text-danger"></i>
+                         </div>
+                    </div>
+                    <div class="row form-group">
+                            <div class="col-md-2">
+                                    <label for="name">Terms & Conditions</label>
+                            </div>
+                         <div class="col-md-10">
+                            <input type="checkbox" id="tnc"> I agree on Terms & Conditions.
+                            <br> <i id="tncerror" class="text-danger"></i>
+                         </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <button class="btn btn-success" onclick="send()">Send</button>
+                    <button class="btn btn-danger" onclick="reset()">Reset</button>
+                </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+
+        <script>
+            function send(){
+                var name = document.getElementById("fname").value;
+                name = name.trim();
+                if(name==""){
+                        document.getElementById("fname").style.borderColor = "red";
+                        document.getElementById("nameerror").innerHTML = "Please Enter Your Name";
+                }
+                else{
+                    document.getElementById("fname").style.borderColor = "green";
+                    document.getElementById("nameerror").innerHTML = "";
+                }
+                 //Mobile number validation
+                 var mobile = document.getElementById("mobile").value;
+                mobile = mobile.trim();
+                if((mobile=="") || (mobile.length!=10) || (isNaN(mobile))){
+                        document.getElementById("mobile").style.borderColor = "red";
+                        document.getElementById("mobile").value = "";
+                        document.getElementById("mobileerror").innerHTML = "Please Enter Your Mobile No";
+                }
+                else{
+                    document.getElementById("mobile").style.borderColor = "green";
+                    document.getElementById("mobileerror").innerHTML = "";
+                }
+                //Message validation
+                var msg = document.getElementById("msg").value;
+                msg = msg.trim();
+                if((msg=="")|| (msg.length<20)){
+                        document.getElementById("msg").style.borderColor = "red";
+                        document.getElementById("msgerror").innerHTML = "Please Enter Your Message";
+                }
+                else{
+                    document.getElementById("msg").style.borderColor = "green";
+                    document.getElementById("msgerror").innerHTML = "";
+                }
+
+                //city validation
+                var city = document.getElementById("city").value;
+                if((city=="")){
+                        document.getElementById("city").style.borderColor = "red";
+                        document.getElementById("cityerror").innerHTML = "Please Select Your city";
+                }
+                else{
+                    document.getElementById("city").style.borderColor = "green";
+                    document.getElementById("cityerror").innerHTML = "";
+                }
+                   //Gender validation
+                  var m = document.getElementById("male").checked;
+                  var f = document.getElementById("female").checked;
+                
+                  if((m==false) && (f==false)){
+                    
+                      document.getElementById("gendererror").innerHTML = "Select Your Gender";
+                  }
+                  else{
+                    document.getElementById("gendererror").innerHTML = "";
+                  }
+
+                  // Terms & Conditiosn validation.
+
+                  var tnc = document.getElementById("tnc").checked;
+                  if(tnc==false){
+                    document.getElementById("tncerror").innerHTML = "T&C is required !";
+                  }
+                  else{
+                    document.getElementById("tncerror").innerHTML = "";
+                  }
+            }
+           
+
+        </script>
+    </body>
+</html>
